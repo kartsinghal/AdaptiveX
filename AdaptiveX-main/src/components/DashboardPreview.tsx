@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Bell, Moon, Shield, Trash2, ToggleLeft, ToggleRight } from 'lucide-react';
+import { Bell, Shield, Trash2, ToggleLeft, ToggleRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAdaptive } from '../context/AdaptiveContext';
 import { useIntersection } from '../hooks/useIntersection';
@@ -204,7 +204,7 @@ const BillingPanel = () => (
   </div>
 );
 
-const SettingsPanel = () => {
+export const SettingsPanel = () => {
   const [notifications, setNotifications] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
   const [analytics, setAnalytics] = useState(false);
