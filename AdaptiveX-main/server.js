@@ -2,8 +2,10 @@ import express from 'express';
 import cors    from 'cors';
 import routes  from './routes/index.js';
 
+import authRoutes from './routes/auth.js';
+
 const app  = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3001;
 
 // ── Middleware ─────────────────────────────────────────────
 app.use(cors({ origin: '*', exposedHeaders: ['x-session-id'] }));
@@ -16,6 +18,7 @@ app.use((req, _res, next) => {
 });
 
 // ── Routes ─────────────────────────────────────────────────
+app.use('/auth', authRoutes);
 app.use('/api', routes);
 
 // ── Health check ───────────────────────────────────────────
